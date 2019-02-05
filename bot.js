@@ -27,7 +27,7 @@ client.on('ready', () => {
 
 
     // Postando uma imagem ou um arquivo no canal
-    const img = new Discord.Attachment('C:/Users/Gugale/Pictures/enrico.jpg');
+    const img = new Discord.Attachment(config.image);
     batePapo.send(img);
 });
 
