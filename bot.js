@@ -1,7 +1,9 @@
 const Discord = require('discord.js');
-const client = new Discord.Client();
 const cmd = require('./functions.js');
 const config = require('./config.json');
+const client = new Discord.Client();
+
+
 
 client.on('ready', () => {
     client.user.setActivity(config.activity.doing, {type: config.activity.type});
@@ -42,14 +44,6 @@ client.on('message', message => {
         cmd.processCommand(message);
         message.react(config.emojis.boi);
     }
-
-    // Marcando um usuário
-    // message.channel.send(`Mensagem recebida de ${message.author.toString()}: ${message.content}`);
-    
-    // Checando se o bot foi marcado na mensagem
-    // if(message.content.includes(client.user.toString())) {
-    //     message.channel.send(`Mensagem recebida de ${message.author.toString()}: ${message.content}`);
-    // }
 });
 
 client.login(config.token);
