@@ -4,6 +4,8 @@ const config = require('./config.json');
 const client = new Discord.Client();
 
 client.on('ready', () => {
+    console.log('Ready');
+
     client.user.setActivity(config.activity.doing, {type: config.activity.type});
 
     // Canais
