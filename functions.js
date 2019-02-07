@@ -43,7 +43,7 @@ function processCommand(msg) {
 
             break;
 
-        case 'skip':
+        case 'next':
             var server = servers[msg.guild.id];
 
             if(server.dispatcher) servers.dispatcher.end();
@@ -88,9 +88,16 @@ function processCommand(msg) {
             }
             break;
 
+        case 'team':
+            const embed = new Discord.RichEmbed();
+            embed.setTitle('Line up principal dos cornos');
+            embed.setColor(15105570);
+            break;  
+
         default:
             msg.channel.send('Faça seu berrante tocar mais alto, não entendi seu comando. Tente pedir ajuda `!help`');
             break;
+            
     }
 }
 
